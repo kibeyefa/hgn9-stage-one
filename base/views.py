@@ -15,3 +15,6 @@ class SlackDetailsView(APIView):
         }
 
         return Response(data=data)
+
+    def post(self, *args, **wargs):
+        pass
