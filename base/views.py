@@ -11,7 +11,7 @@ class SlackDetailsView(APIView):
             'slackUsername': 'kibeyefa',
             'backend': True,
             'age': 21,
-            'bio': "",
+            'bio': "I am Koboju Kibeyefa, a backend developer and student of The Federal University of Technology Akure.",
         }
 
         return Response(data=data)
