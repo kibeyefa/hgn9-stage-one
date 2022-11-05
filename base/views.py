@@ -8,17 +8,17 @@ from rest_framework.response import Response
 class SlackDetailsView(APIView):
     data = {
         "slackUsername": "kibeyefa",
-        "backend": True,
-        "age": 21,
-        "bio": "I am Koboju Kibeyefa, a backend developer and student of The Federal University of Technology Akure.",
     }
 
     def get(self, request, *args, **kwargs):
+        self.data["backend"] = True,
+        self.data["age"] = 21,
+        self.data["bio"] = "I am Koboju Kibeyefa, a backend developer and student of The Federal University of Technology Akure.",
         return Response(data=self.data)
 
     def post(self, *args, **wargs):
         post_data = self.request.data
-        operation = post_data.get('operatation_type')
+        operation = post_data.get('operation_type')
         x: int = post_data.get('x')
         y: int = post_data.get('y')
 
@@ -32,4 +32,5 @@ class SlackDetailsView(APIView):
             result = int(x * y)
 
         self.data['result'] = result
+        self.data['operation_type'] = operation
         return Response(self.data)
